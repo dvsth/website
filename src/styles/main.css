@@ -1,50 +1,10 @@
 html {
-	background: black;
+	background: whitesmoke;
 	background-size: 100% 100%;
 }
 
-.header {
-	position: sticky;
-	width: auto;
-	padding: 3%;
-	margin: auto;
-	height: auto;
-	overflow: hidden;
-	text-align: center;
-	/* background: linear-gradient(60deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-	background: linear-gradient(135deg, #86A69A, #C4A956, #CC4343);
-	background-size: 800% 100%;
-	-webkit-background-clip: text;
-	background-clip: text;
-	animation: gradient 15s linear forwards normal infinite ;
-	animation-play-state: running;
-}
-
-.navlinks .active {
-	opacity: 1;
-	-webkit-text-fill-color: transparent;
-	color: transparent;
-}
-.navlinks .active:hover {
-	opacity: 1;
-}
-
-.navlinks a {
-	margin: auto;
-	padding: 0em 0.2em;
-	width: fit-content;
-	font-size: 5vmin;
-	font-family: 'Spectral', sans-serif;
-	font-weight: 400;
-	text-decoration: none;
-	opacity: 0.45;
-	transition: opacity 0.3s 0s ease-in-out;
-	color: grey;
-	-webkit-text-fill-color: grey;
-}
-
-.navlinks a:hover {
-	opacity: 0.65;
+body {
+	margin: 0;
 }
 
 @keyframes gradient{
@@ -59,12 +19,84 @@ html {
 	100% {background-position:0% 50%;}
 }
 
+.header {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 100%); -webkit-transform: translateY(100%); }
+    100% { transform: translate(0, -130%); -webkit-transform: translateY(-100%); }
+}
+
+.navlinks {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	width: 50vw;
+	height: 100vh;
+	padding-left: 10%;
+	-webkit-animation: marquee 15s linear infinite;
+    animation: marquee 15s linear infinite;
+	
+}
+
+.navlinks a {
+	padding: 0em 0.2em;
+	font-size: 5vmin;
+	font-family: 'Spectral', sans-serif;
+	font-weight: 400;
+	text-decoration: none;
+	opacity: 0.45;
+	transition: opacity 0.3s 0s ease-in-out;
+	color: grey;
+}
+
+.navlinks .active {
+	opacity: 1;
+}
+.navlinks .active:hover {
+	opacity: 1;
+}
+
+.navlinks a:hover {
+	opacity: 0.65;
+}
+
+.headername {
+	display: inline-block;
+	width: 50vw;
+	margin: auto;
+	text-align: right;
+	vertical-align: middle;
+	/* background: linear-gradient(60deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+	background: linear-gradient(135deg, #86A69A, #C4A956, #CC4343);
+	background-size: 800% 100%;
+	animation: gradient 15s linear forwards normal infinite ;
+	animation-play-state: running;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
 .headername a {
 	font-size: 15vmin;
 	font-family: 'Playball', cursive;
 	text-decoration: none;
-	-webkit-text-fill-color: transparent;
 	color: transparent;
+	-webkit-text-fill-color: transparent;
+	text-align: center;
+	/* color: black; */
+	z-index: 99;
+	background-clip: text;
+	-webkit-background-clip: text;
 }
 
 img {

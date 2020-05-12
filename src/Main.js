@@ -20,7 +20,7 @@ class Main extends Component {
                 <HashRouter>
                     <div className="header">
                         <div className="headername">
-                            <NavLink exact to="/">Dev Seth</NavLink>
+                            <NavLink exact to="/"><span>Dev Seth</span></NavLink>
                         </div>
                         <div className="navlinks">
                             <NavLink exact to="/art">art</NavLink>
@@ -38,7 +38,6 @@ class Main extends Component {
                         <Route exact path="/about" component={About}></Route>
                     </div>
                 </HashRouter>
-                <img alt="voxels" src={require("./images/voxel.png")}/>
             </div>
         );
     }
