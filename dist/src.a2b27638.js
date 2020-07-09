@@ -83352,27 +83352,25 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
       this.finalComposer = new _EffectComposer.EffectComposer(this.renderer);
       this.finalComposer.addPass(asciiPass); // Mouse Move
 
-      function mousemove(e, lightCone, backLight) {
-        lightCone.position.x = 5 * (e.clientX / window.innerWidth * 1 * 2 - 1);
-        backLight.position.x = lightCone.position.x;
+      this.mousemove = function (e) {
+        _this2.lightCone.position.x = 5 * (e.clientX / window.innerWidth * 1 * 2 - 1);
+        _this2.backLight.position.x = _this2.lightCone.position.x;
         mousePositionNormalized.set(e.clientX / window.innerWidth * 1, e.clientY / window.innerHeight * 1);
-      }
+      };
 
-      window.addEventListener('mousemove', function (e) {
-        mousemove(e, _this2.lightCone, _this2.backLight);
-      });
+      window.addEventListener('mousemove', this.mousemove);
 
-      function touchMove(e) {
+      this.touchMove = function (e) {
         console.log(e.touches.length);
 
         if (e.touches.length < 2) {
-          this.lightCone.position.x = 5 * (e.changedTouches[0].clientX / window.innerWidth * 1 * 2 - 1);
-          this.backLight.position.x = this.lightCone.position.x;
+          _this2.lightCone.position.x = 5 * (e.changedTouches[0].clientX / window.innerWidth * 1 * 2 - 1);
+          _this2.backLight.position.x = _this2.lightCone.position.x;
           mousePositionNormalized.set(e.changedTouches[0].clientX / window.innerWidth * 1, e.changedTouches[0].clientY / window.innerHeight * 1);
         }
-      }
+      };
 
-      window.addEventListener("touchmove", touchMove); // Handle Window Resize
+      window.addEventListener("touchmove", this.touchMove); // Handle Window Resize
 
       this.updateAsciiRenderSize = function () {
         var size = getLowResSize();

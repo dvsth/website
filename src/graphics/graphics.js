@@ -430,17 +430,17 @@ export default class ThreeGraphics extends React.Component {
 
     // Mouse Move
 
-    function mousemove(e, lightCone, backLight) {
-      lightCone.position.x = 5 * ((e.clientX / window.innerWidth * 1) * 2 - 1)
-      backLight.position.x = lightCone.position.x
+    this.mousemove = (e) => {
+      this.lightCone.position.x = 5 * ((e.clientX / window.innerWidth * 1) * 2 - 1)
+      this.backLight.position.x = this.lightCone.position.x
       mousePositionNormalized.set(
         e.clientX / window.innerWidth * 1,
         e.clientY / window.innerHeight * 1
       )
     }
-    window.addEventListener('mousemove', (e) => { mousemove(e, this.lightCone, this.backLight) })
+    window.addEventListener('mousemove', this.mousemove)
 
-    function touchMove(e) {
+    this.touchMove = (e) => {
       console.log(e.touches.length)
       if (e.touches.length < 2) {
         this.lightCone.position.x = 5 * ((e.changedTouches[0].clientX / window.innerWidth * 1) * 2 - 1)
@@ -451,7 +451,7 @@ export default class ThreeGraphics extends React.Component {
         )
       }
     }
-    window.addEventListener("touchmove", touchMove);
+    window.addEventListener("touchmove", this.touchMove);
 
     // Handle Window Resize
 
