@@ -42962,12 +42962,103 @@ function Card(props) {
 
 var _default = Card;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../styles/card.css":"src/styles/card.css"}],"src/styles/navbartop.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../styles/card.css":"src/styles/card.css"}],"src/styles/navbar.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/NavBarTop.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/react-div-100vh/lib/polyfill.js":[function(require,module,exports) {
+"use strict";
+
+if (!Array.isArray) {
+  Array.isArray = function (arg) {
+    return Object.prototype.toString.call(arg) === '[object Array]';
+  };
+}
+},{}],"node_modules/react-div-100vh/lib/convertStyle/convertStyle.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.containsRvh = containsRvh;
+exports.default = void 0;
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function containsRvh(propertyValue) {
+  // TODO: when regexp is lifted up the lexical scope, to be used
+  // in both `containsRvh` and `replaceRvhWithPx`, some tests start to
+  // fail. Seems like a regexp object contains some weird state that
+  // changes after executions; executions interfere with each other.
+  // It would be nice to figure out what is the problem exactly.
+  var rvhRegex = /(\d+(\.\d*)?)rvh(?!\w)/;
+  return rvhRegex.test(propertyValue);
+}
+
+function replaceRvhWithPx(propertyStringValue, windowHeight) {
+  // regexp is global to make #replace work multiple times
+  var rvhRegex = /(\d+(\.\d*)?)rvh(?!\w)/g;
+  return propertyStringValue.replace(rvhRegex, function (_, rvh) {
+    return "".concat(windowHeight * parseFloat(rvh) / 100, "px");
+  });
+}
+
+function throwOnBadArgs(givenStyle, windowHeight) {
+  if (_typeof(givenStyle) !== 'object' && givenStyle !== undefined || Array.isArray(givenStyle)) throw Error("style (the first argument) must be an object or undefined");
+  if (typeof windowHeight !== 'number' || windowHeight < 0) throw Error('Second argument (windowHeight) must be a non-negative number');
+}
+
+function convertStyle(givenStyle, windowHeight) {
+  throwOnBadArgs(givenStyle, windowHeight); // If style is not passed, implicit {height: '100rvh'} style is used.
+
+  var defaultStyle = {
+    height: '100rvh'
+  };
+  var usedStyle = givenStyle === undefined ? defaultStyle : givenStyle;
+  var convertedStyle = {};
+  Object.keys(usedStyle).forEach(function (key) {
+    // if a value contains no rvh unit, it's used as is, otherwise converted
+    // to px; 1rvh = (window.innerHeight / 100)px
+    convertedStyle[key] = typeof usedStyle[key] === 'string' ? replaceRvhWithPx(usedStyle[key], windowHeight) : usedStyle[key];
+  });
+  return convertedStyle;
+}
+
+var _default = convertStyle;
+exports.default = _default;
+},{}],"node_modules/react-div-100vh/lib/convertStyle/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function get() {
+    return _convertStyle.default;
+  }
+});
+
+var _convertStyle = _interopRequireDefault(require("./convertStyle"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./convertStyle":"node_modules/react-div-100vh/lib/convertStyle/convertStyle.js"}],"node_modules/react-div-100vh/lib/getWindowHeight.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+// extracted into a separate module so it's easier to mock with Jest
+function getWindowHeight() {
+  return document && document.documentElement && document.documentElement.clientHeight || window.innerHeight;
+}
+
+var _default = getWindowHeight;
+exports.default = _default;
+},{}],"node_modules/react-div-100vh/lib/Div100vh.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42977,38 +43068,203 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-require("../styles/navbartop.css");
+var _convertStyle = _interopRequireDefault(require("./convertStyle"));
 
-var _reactRouterDom = require("react-router-dom");
+var _getWindowHeight = _interopRequireDefault(require("./getWindowHeight"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function NavBarTop() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "navheader"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "navnavlinks"
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-    exact: true,
-    to: "/art"
-  }, "art"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-    exact: true,
-    to: "/essays"
-  }, "essays"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-    exact: true,
-    to: "/research"
-  }, "research"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-    exact: true,
-    to: "/travel"
-  }, "travels"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-    exact: true,
-    to: "/about"
-  }, "about")));
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Div100vh =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Div100vh, _React$Component);
+
+  function Div100vh() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Div100vh);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Div100vh)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      style: {}
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "updateStyle", function () {
+      var convertedStyle = (0, _convertStyle.default)(_this.props.style, (0, _getWindowHeight.default)());
+
+      _this.setState({
+        style: convertedStyle
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(Div100vh, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.updateStyle();
+      window.addEventListener('resize', this.updateStyle);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', this.updateStyle);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          _this$props$as = _this$props.as,
+          Element = _this$props$as === void 0 ? 'div' : _this$props$as,
+          props = _objectWithoutProperties(_this$props, ["as"]);
+
+      return _react.default.createElement(Element, _extends({}, props, {
+        style: this.state.style
+      }));
+    }
+  }]);
+
+  return Div100vh;
+}(_react.default.Component);
+
+exports.default = Div100vh;
+},{"react":"node_modules/react/index.js","./convertStyle":"node_modules/react-div-100vh/lib/convertStyle/index.js","./getWindowHeight":"node_modules/react-div-100vh/lib/getWindowHeight.js"}],"node_modules/react-div-100vh/lib/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function get() {
+    return _Div100vh.default;
+  }
+});
+
+require("./polyfill");
+
+var _Div100vh = _interopRequireDefault(require("./Div100vh"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./polyfill":"node_modules/react-div-100vh/lib/polyfill.js","./Div100vh":"node_modules/react-div-100vh/lib/Div100vh.js"}],"src/components/NavBar.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("../styles/navbar.css");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _reactDiv100vh = _interopRequireDefault(require("react-div-100vh"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function NavBar(props) {
+  if (props.top) {
+    var navBarStyle = {
+      top: '5rvh'
+    };
+    return /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
+      className: "navheader",
+      style: navBarStyle
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "navheadername"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/"
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Dev Seth", /*#__PURE__*/_react.default.createElement("br", null), "\u0926\u0947\u0935 \u0938\u0947\u0920"))), /*#__PURE__*/_react.default.createElement("div", {
+      className: "navlinks"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/art"
+    }, "art"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/essays"
+    }, "essays"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/research"
+    }, "research"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/travel"
+    }, "travels"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/about"
+    }, "about")));
+  } else {
+    var _navBarStyle = {
+      top: '80rvh'
+    };
+    return /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
+      className: "navheader",
+      style: _navBarStyle
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "navlinks"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/art"
+    }, "art"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/essays"
+    }, "essays"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/research"
+    }, "research"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/travel"
+    }, "travels"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      exact: true,
+      to: "/about"
+    }, "about")));
+  }
 }
 
-var _default = NavBarTop;
+var _default = NavBar;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../styles/navbartop.css":"src/styles/navbartop.css","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/Art.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../styles/navbar.css":"src/styles/navbar.css","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"src/styles/infopage.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/Art.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43020,14 +43276,18 @@ var _react = _interopRequireDefault(require("react"));
 
 var _Card = _interopRequireDefault(require("../components/Card"));
 
-var _NavBarTop = _interopRequireDefault(require("../components/NavBarTop"));
+var _NavBar = _interopRequireDefault(require("../components/NavBar"));
+
+require("../styles/infopage.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Art() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "page"
-  }, /*#__PURE__*/_react.default.createElement(_NavBarTop.default, null), /*#__PURE__*/_react.default.createElement(_Card.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NavBar.default, {
+    top: "true"
+  }), /*#__PURE__*/_react.default.createElement(_Card.default, {
     text: "Hi this is Dev"
   }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
     href: "/art/hungry-creature.html"
@@ -43038,7 +43298,7 @@ function Art() {
 
 var _default = Art;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../components/Card":"src/components/Card.js","../components/NavBarTop":"src/components/NavBarTop.js"}],"src/pages/Essays.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components/Card":"src/components/Card.js","../components/NavBar":"src/components/NavBar.js","../styles/infopage.css":"src/styles/infopage.css"}],"src/pages/Essays.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -83191,9 +83451,11 @@ var _react = _interopRequireWildcard(require("react"));
 
 require("../styles/home.css");
 
-var _NavBarTop = _interopRequireDefault(require("../components/NavBarTop"));
+var _NavBar = _interopRequireDefault(require("../components/NavBar"));
 
 var _graphics = _interopRequireDefault(require("../graphics/graphics"));
+
+var _reactDiv100vh = _interopRequireDefault(require("react-div-100vh"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -83236,31 +83498,21 @@ var Home = /*#__PURE__*/function (_Component) {
 
   _createClass(Home, [{
     key: "render",
-    // componentDidMount() {
-    //     require('../graphics/graphics.js')
-    //     var tag = document.createElement('script');
-    //     tag.async = true;
-    //     tag.id = "threecanvas";
-    //     tag.type = "text/javascript"
-    //     tag.src = "../graphics/graphics.js";
-    //     document.body.appendChild(tag);
-    //     console.log(tag)
-    //     console.log("COMPONENT DID!!! mount")
-    // }
-    // componentWillUnmount() {
-    //     var element = document.getElementById("threecanvas");
-    //     element.parentNode.removeChild(element);
-    // }
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "home"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "name"
+      }, /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
+        className: "name",
+        style: {
+          top: '60rvh'
+        }
       }, /*#__PURE__*/_react.default.createElement("p", {
         className: "left"
       }, "DEV", /*#__PURE__*/_react.default.createElement("br", null), "\u0926\u0947\u0935"), /*#__PURE__*/_react.default.createElement("p", {
         className: "right"
-      }, "SETH", /*#__PURE__*/_react.default.createElement("br", null), "\u0938\u0947\u0920")), /*#__PURE__*/_react.default.createElement(_NavBarTop.default, null), /*#__PURE__*/_react.default.createElement(_graphics.default, null), /*#__PURE__*/_react.default.createElement("div", {
+      }, "SETH", /*#__PURE__*/_react.default.createElement("br", null), "\u0938\u0947\u0920")), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
+        top: false
+      }), /*#__PURE__*/_react.default.createElement(_graphics.default, null), /*#__PURE__*/_react.default.createElement("div", {
         className: "canvaswrapper"
       }, " "));
     }
@@ -83271,7 +83523,7 @@ var Home = /*#__PURE__*/function (_Component) {
 
 var _default = Home;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../styles/home.css":"src/styles/home.css","../components/NavBarTop":"src/components/NavBarTop.js","../graphics/graphics":"src/graphics/graphics.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../styles/home.css":"src/styles/home.css","../components/NavBar":"src/components/NavBar.js","../graphics/graphics":"src/graphics/graphics.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -83385,7 +83637,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51719" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53766" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

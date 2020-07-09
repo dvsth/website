@@ -1,0 +1,67 @@
+.navheader {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 3;
+	top: 75vh;
+	width: 100vw;
+	height: 20vmin;
+	overflow: hidden;
+	line-height: 8vmin;
+}
+
+.navlinks {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 70vw;
+	height: 15vmin;
+	/* padding-left: 10%; */
+	
+}
+
+.navlinks a {
+	padding: 0em 1.5vw;
+	font-size: 5vmin;
+	font-family: 'Orbitron', 'Spectral', sans-serif;
+	font-weight: 400;
+	text-decoration: none;
+	opacity: 0.75;
+	transition: opacity 0.3s 0s ease-in-out;
+	color: whitesmoke;
+}
+
+.navlinks .active {
+	opacity: 1;
+	font-weight: 400;
+	font-style: italic;
+}
+.navlinks .active:hover {
+	opacity: 1;
+}
+
+.navlinks a:hover {
+	opacity: 0.9;
+	font-weight: 600;
+}
+
+.navheadername {
+	display: inline-block;
+	width: 30vw;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 2vw;
+}
+
+.navheadername a {
+	font-size: 10vmin;
+	font-family: 'Orbitron', 'Courier New', Courier, monospace;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+}

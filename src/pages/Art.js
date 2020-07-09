@@ -1,12 +1,13 @@
 import React from "react";
 import Card from "../components/Card";
-import NavBarTop from "../components/NavBarTop";
+import NavBar from "../components/NavBar";
 
+import "../styles/infopage.css"
 
 function Art() {
     return (
         <div className="page">
-            <NavBarTop />
+            <NavBar top="true"/>
             <Card text="Hi this is Dev" />
             <p>
                 <a href="/art/hungry-creature.html"> Pay a visit to the Hungry Creature </a> <br />

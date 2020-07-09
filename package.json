@@ -8,12 +8,15 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "div": "^1.0.1",
     "fonts": "^0.0.2",
     "framer-motion": "^1.11.1",
     "gltfpack": "^0.14.0",
     "lodash.debounce": "^4.0.8",
     "parcel": "^1.12.4",
+    "parcel-plugin-nuke-dist": "^1.0.1",
     "react": "^16.13.1",
+    "react-div-100vh": "^0.3.8",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",

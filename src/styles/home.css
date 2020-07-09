@@ -34,7 +34,8 @@ p {
   font-family: 'Orbitron', monospace;
   font-weight: 800;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 1);
+  -webkit-text-stroke: black 2px;
 
   user-select: none;
 }
@@ -44,7 +45,7 @@ p {
   flex-direction: row;
   width: 100vw;
   align-items: center;
-  top: 40%;
+  top: 40vh;
   margin-bottom: 0;
   position: fixed;
   z-index: 5;
