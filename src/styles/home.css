@@ -1,0 +1,67 @@
+html, body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: black;
+  height: 100%;
+}
+
+#home, #root {
+  height: 100%;
+  width: 100%;
+}
+
+canvas {
+  position: fixed;
+  display: block;
+  z-index: 1;
+}
+
+.navnavlinks {
+  z-index: 5;
+}
+
+p {
+  z-index: 6;
+  
+  width: 50vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 5vw;
+  padding-right: 5vw;
+
+  text-align: center;
+  font-size: 8vmin;
+  font-family: 'Orbitron', monospace;
+  font-weight: 800;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  user-select: none;
+}
+
+.name{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  align-items: center;
+  top: 40%;
+  margin-bottom: 0;
+  position: fixed;
+  z-index: 5;
+}
+
+.canvaswrapper {
+  position: fixed;
+  top: 50vh;
+  z-index: 2;
+  width: 100vw;
+  height: 50vh;
+  background-image: linear-gradient(transparent, black);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
