@@ -21,7 +21,7 @@ p {
 	top: 75vh;
 	width: 100vw;
 	height: 20vmin;
-	overflow: hidden;
+	overflow: visible;
 	line-height: 8vmin;
 }
 
@@ -40,7 +40,7 @@ p {
 .navlinks a {
 	padding: 0em 1.5vw;
 	font-size: 5vmin;
-	font-family: 'Orbitron', 'Spectral', sans-serif;
+	font-family: 'Lexend Zetta', 'Orbitron', 'Spectral', sans-serif;
 	font-weight: 400;
 	text-decoration: none;
 	opacity: 0.75;
@@ -105,7 +105,7 @@ canvas {
   z-index: 5;
 }
 
-p {
+.hometext {
   z-index: 6;
   
   width: 50vw;
@@ -116,11 +116,11 @@ p {
 
   text-align: center;
   font-size: 8vmin;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Lexend Zetta', 'Orbitron', monospace;
   font-weight: 800;
 
-  color: rgba(255, 255, 255, 1);
-  -webkit-text-stroke: black 2px;
+  color: rgba(255, 255, 255, 0.7);
+  /* -webkit-text-stroke: black 2px; */
 
   user-select: none;
 }

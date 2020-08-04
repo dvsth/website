@@ -83018,10 +83018,18 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
         _this.modelContainer.rotation.y += delta * 0.2;
       } else {
         _this.modelContainer.rotation.y -= delta * 0.2;
-      }
+      } // // update rings
+      // this.circle1.rotation.x += delta * 0.2;
+      // this.circle2.rotation.x += delta * 0.2;
+      // this.circle2.rotation.y += delta * 0.25;
+      // this.circle3.rotation.x -= delta * 0.3;
+      // this.circle3.rotation.y -= delta * 0.27;
+      // this.circle4.rotation.x -= delta * 0.3;
+      // this.circle4.rotation.y -= delta * 0.27;
+
 
       _this.animateParticles(delta); // update orbitcontrols
-      // controls.update();
+      // this.controls.update();
       // Scan
 
 
@@ -83108,7 +83116,25 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
       this.renderer = new THREE.WebGLRenderer();
       this.renderer.setSize(window.innerWidth * 1, window.innerHeight * 1);
       this.mount.appendChild(this.renderer.domElement); // add orbit controls
-      // var controls = new OrbitControls(this.mainCamera, this.renderer.domElement);
+      // this.controls = new OrbitControls(this.mainCamera, this.renderer.domElement);
+      // circles around the model
+      // var CircleGeometry1 = new THREE.RingGeometry(2.5, 0.02, 32, 32);
+      // var CircleMaterial1 = new THREE.MeshBasicMaterial({ color: 0x333333 });
+      // this.circle1 = new THREE.Mesh(CircleGeometry1, CircleMaterial1);
+      // this.circle1.rotation.x = 0.1;
+      // this.circle2 = new THREE.Mesh(CircleGeometry, CircleMaterial);
+      // this.circle2.rotation.x = 1;
+      // this.circle2.rotation.y = 0.5;
+      // this.circle3 = new THREE.Mesh(CircleGeometry, CircleMaterial);
+      // this.circle3.rotation.x = -1;
+      // this.circle3.rotation.y = -2;
+      // this.circle4 = new THREE.Mesh(CircleGeometry, CircleMaterial);
+      // this.circle4.rotation.x = -2;
+      // this.circle4.rotation.y = -1;
+      // this.mainScene.add(this.circle1);
+      // this.mainScene.add(this.circle2);
+      // this.mainScene.add(this.circle3);
+      // this.mainScene.add(this.circle4);
       // Load 3D Model
 
       this.loader = new _GLTFLoader.GLTFLoader();
@@ -83505,10 +83531,10 @@ var Home = /*#__PURE__*/function (_Component) {
           top: '60rvh'
         }
       }, /*#__PURE__*/_react.default.createElement("p", {
-        className: "left"
-      }, "DEV", /*#__PURE__*/_react.default.createElement("br", null), "\u0926\u0947\u0935"), /*#__PURE__*/_react.default.createElement("p", {
-        className: "right"
-      }, "SETH", /*#__PURE__*/_react.default.createElement("br", null), "\u0938\u0947\u0920")), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
+        className: "hometext left"
+      }, "Dev", /*#__PURE__*/_react.default.createElement("br", null), "Seth"), /*#__PURE__*/_react.default.createElement("p", {
+        className: "hometext right"
+      }, "\u0926\u0947\u0935", /*#__PURE__*/_react.default.createElement("br", null), "\u0938\u0947\u0920")), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
         top: false
       }), /*#__PURE__*/_react.default.createElement(_graphics.default, null), /*#__PURE__*/_react.default.createElement("div", {
         className: "canvaswrapper"
@@ -83635,7 +83661,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53766" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50154" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

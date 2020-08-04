@@ -20,7 +20,7 @@ canvas {
   z-index: 5;
 }
 
-p {
+.hometext {
   z-index: 6;
   
   width: 50vw;
@@ -31,11 +31,11 @@ p {
 
   text-align: center;
   font-size: 8vmin;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Lexend Zetta', 'Orbitron', monospace;
   font-weight: 800;
 
-  color: rgba(255, 255, 255, 1);
-  -webkit-text-stroke: black 2px;
+  color: rgba(255, 255, 255, 0.7);
+  /* -webkit-text-stroke: black 2px; */
 
   user-select: none;
 }

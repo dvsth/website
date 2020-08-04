@@ -13,8 +13,8 @@ class Home extends Component {
         return (
             <div id="home">
                 <Div100vh className="name" style={{top: '60rvh'}}>
-                    <p className="left">DEV<br />देव</p>
-                    <p className="right">SETH<br />सेठ</p>
+                    <p className="hometext left">Dev<br />Seth</p>
+                    <p className="hometext right">देव<br />सेठ</p>
                 </Div100vh>
                 <NavBar top={false}/>
                 <ThreeGraphics />

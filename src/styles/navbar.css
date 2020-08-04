@@ -8,7 +8,7 @@
 	top: 75vh;
 	width: 100vw;
 	height: 20vmin;
-	overflow: hidden;
+	overflow: visible;
 	line-height: 8vmin;
 }
 
@@ -27,7 +27,7 @@
 .navlinks a {
 	padding: 0em 1.5vw;
 	font-size: 5vmin;
-	font-family: 'Orbitron', 'Spectral', sans-serif;
+	font-family: 'Lexend Zetta', 'Orbitron', 'Spectral', sans-serif;
 	font-weight: 400;
 	text-decoration: none;
 	opacity: 0.75;

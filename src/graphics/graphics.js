@@ -79,7 +79,27 @@ export default class ThreeGraphics extends React.Component {
     this.mount.appendChild(this.renderer.domElement)
 
     // add orbit controls
-    // var controls = new OrbitControls(this.mainCamera, this.renderer.domElement);
+    // this.controls = new OrbitControls(this.mainCamera, this.renderer.domElement);
+
+    // circles around the model
+    // var CircleGeometry1 = new THREE.RingGeometry(2.5, 0.02, 32, 32);
+    // var CircleMaterial1 = new THREE.MeshBasicMaterial({ color: 0x333333 });
+    // this.circle1 = new THREE.Mesh(CircleGeometry1, CircleMaterial1);
+    // this.circle1.rotation.x = 0.1;
+    // this.circle2 = new THREE.Mesh(CircleGeometry, CircleMaterial);
+    // this.circle2.rotation.x = 1;
+    // this.circle2.rotation.y = 0.5;
+    // this.circle3 = new THREE.Mesh(CircleGeometry, CircleMaterial);
+    // this.circle3.rotation.x = -1;
+    // this.circle3.rotation.y = -2;
+    // this.circle4 = new THREE.Mesh(CircleGeometry, CircleMaterial);
+    // this.circle4.rotation.x = -2;
+    // this.circle4.rotation.y = -1;
+    // this.mainScene.add(this.circle1);
+    // this.mainScene.add(this.circle2);
+    // this.mainScene.add(this.circle3);
+    // this.mainScene.add(this.circle4);
+
 
     // Load 3D Model
 
@@ -511,7 +531,7 @@ export default class ThreeGraphics extends React.Component {
     this.start()
   }
 
-  renderScene = ()  => {
+  renderScene = () => {
 
     const delta = this.clock.getDelta()
 
@@ -532,10 +552,19 @@ export default class ThreeGraphics extends React.Component {
       this.modelContainer.rotation.y -= delta * 0.2;
     }
 
+    // // update rings
+    // this.circle1.rotation.x += delta * 0.2;
+    // this.circle2.rotation.x += delta * 0.2;
+    // this.circle2.rotation.y += delta * 0.25;
+    // this.circle3.rotation.x -= delta * 0.3;
+    // this.circle3.rotation.y -= delta * 0.27;
+    // this.circle4.rotation.x -= delta * 0.3;
+    // this.circle4.rotation.y -= delta * 0.27;
+
     this.animateParticles(delta)
 
     // update orbitcontrols
-    // controls.update();
+    // this.controls.update();
 
     // Scan
 
