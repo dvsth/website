@@ -43203,6 +43203,9 @@ function NavBar(props) {
     var navBarStyle = {
       top: '5rvh'
     };
+    var navlinksStyle = {
+      fontSize: 'min(5vmin, 18px)'
+    };
     return /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
       className: "navheader",
       style: navBarStyle
@@ -43211,8 +43214,9 @@ function NavBar(props) {
     }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
       exact: true,
       to: "/"
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Dev Seth", /*#__PURE__*/_react.default.createElement("br", null), "\u0926\u0947\u0935 \u0938\u0947\u0920"))), /*#__PURE__*/_react.default.createElement("div", {
-      className: "navlinks"
+    }, /*#__PURE__*/_react.default.createElement("span", null, "DeV SeT\u2022H"))), /*#__PURE__*/_react.default.createElement("div", {
+      className: "navlinks",
+      style: navlinksStyle
     }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
       exact: true,
       to: "/art"
@@ -43231,29 +43235,32 @@ function NavBar(props) {
     }, "about")));
   } else {
     var _navBarStyle = {
-      top: '80rvh'
+      fontSize: 'min(5vmin, 25px)'
     };
-    return /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
-      className: "navheader",
-      style: _navBarStyle
-    }, /*#__PURE__*/_react.default.createElement("div", {
-      className: "navlinks"
-    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-      exact: true,
-      to: "/art"
-    }, "art"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-      exact: true,
-      to: "/essays"
-    }, "essays"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-      exact: true,
-      to: "/research"
-    }, "research"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-      exact: true,
-      to: "/travel"
-    }, "travels"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
-      exact: true,
-      to: "/about"
-    }, "about")));
+    return (
+      /*#__PURE__*/
+      // <Div100vh className="navheader">
+      _react.default.createElement("div", {
+        className: "navlinks",
+        style: _navBarStyle
+      }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+        exact: true,
+        to: "/art"
+      }, "art"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+        exact: true,
+        to: "/essays"
+      }, "essays"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+        exact: true,
+        to: "/research"
+      }, "research"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+        exact: true,
+        to: "/travel"
+      }, "travels"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+        exact: true,
+        to: "/about"
+      }, "about")) // </Div100vh>
+
+    );
   }
 }
 
@@ -83526,17 +83533,17 @@ var Home = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "home"
       }, /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
-        className: "name",
+        id: "homemenu",
         style: {
-          top: '60rvh'
+          top: '70rvh'
         }
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "name"
       }, /*#__PURE__*/_react.default.createElement("p", {
         className: "hometext left"
-      }, "Dev", /*#__PURE__*/_react.default.createElement("br", null), "Seth"), /*#__PURE__*/_react.default.createElement("p", {
-        className: "hometext right"
-      }, "\u0926\u0947\u0935", /*#__PURE__*/_react.default.createElement("br", null), "\u0938\u0947\u0920")), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
+      }, "DeV SeT\u2022H")), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
         top: false
-      }), /*#__PURE__*/_react.default.createElement(_graphics.default, null), /*#__PURE__*/_react.default.createElement("div", {
+      })), /*#__PURE__*/_react.default.createElement(_graphics.default, null), /*#__PURE__*/_react.default.createElement("div", {
         className: "canvaswrapper"
       }, " "));
     }
