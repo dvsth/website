@@ -7,7 +7,6 @@ import "../styles/page.css"
 function Art() {
     return (
         <div className="page">
-            <NavBar top="true" />
             <Card text="Hi this is Dev" />
             <p>
                 <a href="/art/hungry-creature.html"> Pay a visit to the Hungry Creature </a> <br />

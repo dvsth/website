@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 function About() {
     return (
         <div>
-            <NavBar top="true"/>
             <p>
                 Hi, this is Dev!
                 <img 
