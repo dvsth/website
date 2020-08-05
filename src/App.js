@@ -5,9 +5,9 @@ import { AnimatePresence } from "framer-motion";
 import AnimatedRoute from "./components/AnimatedRoute";
 
 import Art from "./pages/Art"
-import Essays from "./pages/Essays";
+import Writings from "./pages/Writings";
 import Research from "./pages/Research";
-import Travel from "./pages/Travel";
+import Code from "./pages/Code";
 import About from "./pages/About";
 import Home from "./pages/Home";
 
@@ -17,10 +17,11 @@ function App() {
       <Switch key="mySwitch">
         <AnimatedRoute key="a" exact path="/" component={Home} />
         <AnimatedRoute key="b" exact path="/art" component={Art} />
-        <AnimatedRoute key="c" exact path="/essays" component={Essays} />
+        <AnimatedRoute key="c" exact path="/writings" component={Writings} />
         <AnimatedRoute key="d" exact path="/research" component={Research} />
-        <AnimatedRoute key="e" exact path="/travel" component={Travel} />
+        <AnimatedRoute key="e" exact path="/code" component={Code} />
         <AnimatedRoute key="f" exact path="/about" component={About} />
+        <AnimatedRoute key="g" path="/" component={Home} />
       </Switch>
     </AnimatePresence>
   )

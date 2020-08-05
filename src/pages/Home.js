@@ -17,7 +17,7 @@ class Home extends Component {
                         <p className="hometext left">DeV SeT•H</p>
                         {/* <p className="hometext right">देव<br />सेठ</p> */}
                     </div>
-                    <NavBar top={false} />
+                    <NavBar top={false} theme="dark"/>
                 </Div100vh>
                 <ThreeGraphics />
                 <div className="canvaswrapper">	</div>

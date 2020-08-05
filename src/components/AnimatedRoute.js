@@ -11,10 +11,16 @@ function AnimatedRoute(props) {
     return (
         <motion.div
             key={props.key}
-            initial={{ y: '-30%', opacity: 0 }}
-            animate={{ y: '0%', opacity: 1 }}
-            exit={{ y: '-100%', opacity: 0 }}
-            transition={{ duration: 0.75 }}
+            // vertical slide fade in:
+            // initial={{ y: '3%', opacity: 0 }}
+            // animate={{ y: '0%', opacity: 1 }}
+            // exit={{ y: '-100%', opacity: 0 }}
+
+            // fade in
+            initial={{ opacity: 0.5 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0.5 }}
+            transition={{ duration: 0.5 }}
         >
 
             <Route

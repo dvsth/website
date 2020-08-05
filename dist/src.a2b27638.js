@@ -42842,21 +42842,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function AnimatedRoute(props) {
   return /*#__PURE__*/_react.default.createElement(_framerMotion.motion.div, {
-    key: props.key,
+    key: props.key // vertical slide fade in:
+    // initial={{ y: '3%', opacity: 0 }}
+    // animate={{ y: '0%', opacity: 1 }}
+    // exit={{ y: '-100%', opacity: 0 }}
+    // fade in
+    ,
     initial: {
-      y: '-30%',
-      opacity: 0
+      opacity: 0.5
     },
     animate: {
-      y: '0%',
       opacity: 1
     },
     exit: {
-      y: '-100%',
-      opacity: 0
+      opacity: 0.5
     },
     transition: {
-      duration: 0.75
+      duration: 0.5
     }
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     key: props.key + "1",
@@ -43198,17 +43200,30 @@ var _reactDiv100vh = _interopRequireDefault(require("react-div-100vh"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function NavBar(props) {
+  var textColor = props.theme === "dark" ? {
+    color: 'black'
+  } : {
+    color: 'rgba(255, 255, 255, 0.7)'
+  };
+
   if (props.top) {
     var navBarStyle = {
-      top: '5rvh'
+      top: '0rvh'
     };
     var navlinksStyle = {
-      fontSize: 'min(5vmin, 18px)'
+      fontSize: 'min(5vmin, 15px)'
     };
+    console.log(_objectSpread(_objectSpread({}, navBarStyle), textColor));
     return /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
       className: "navheader",
-      style: navBarStyle
+      style: _objectSpread(_objectSpread({}, navBarStyle), textColor)
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "navheadername"
     }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
@@ -43216,26 +43231,26 @@ function NavBar(props) {
       to: "/"
     }, /*#__PURE__*/_react.default.createElement("span", null, "DeV SeT\u2022H"))), /*#__PURE__*/_react.default.createElement("div", {
       className: "navlinks",
-      style: navlinksStyle
+      style: _objectSpread(_objectSpread({}, navlinksStyle), textColor)
     }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
       exact: true,
       to: "/art"
     }, "art"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
       exact: true,
-      to: "/essays"
-    }, "essays"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      to: "/code"
+    }, "code"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
       exact: true,
       to: "/research"
     }, "research"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
       exact: true,
-      to: "/travel"
-    }, "travels"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+      to: "/writings"
+    }, "writings"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
       exact: true,
       to: "/about"
     }, "about")));
   } else {
     var _navBarStyle = {
-      fontSize: 'min(5vmin, 25px)'
+      fontSize: 'min(5vmin, 21px)'
     };
     return (
       /*#__PURE__*/
@@ -43248,14 +43263,14 @@ function NavBar(props) {
         to: "/art"
       }, "art"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
         exact: true,
-        to: "/essays"
-      }, "essays"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+        to: "/code"
+      }, "code"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
         exact: true,
         to: "/research"
       }, "research"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
         exact: true,
-        to: "/travel"
-      }, "travels"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
+        to: "/writings"
+      }, "writings"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
         exact: true,
         to: "/about"
       }, "about")) // </Div100vh>
@@ -43266,7 +43281,7 @@ function NavBar(props) {
 
 var _default = NavBar;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../styles/navbar.css":"src/styles/navbar.css","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"src/styles/infopage.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../styles/navbar.css":"src/styles/navbar.css","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"src/styles/page.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -43285,7 +43300,7 @@ var _Card = _interopRequireDefault(require("../components/Card"));
 
 var _NavBar = _interopRequireDefault(require("../components/NavBar"));
 
-require("../styles/infopage.css");
+require("../styles/page.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43305,7 +43320,7 @@ function Art() {
 
 var _default = Art;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../components/Card":"src/components/Card.js","../components/NavBar":"src/components/NavBar.js","../styles/infopage.css":"src/styles/infopage.css"}],"src/pages/Essays.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components/Card":"src/components/Card.js","../components/NavBar":"src/components/NavBar.js","../styles/page.css":"src/styles/page.css"}],"src/pages/Writings.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43317,7 +43332,7 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Essays() {
+function Writings() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
     href: "/art/hungry-creature.html"
   }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
@@ -43325,7 +43340,7 @@ function Essays() {
   }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
 }
 
-var _default = Essays;
+var _default = Writings;
 exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"src/pages/Research.js":[function(require,module,exports) {
 "use strict";
@@ -43349,7 +43364,7 @@ function Research() {
 
 var _default = Research;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/pages/Travel.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"src/pages/Code.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43361,7 +43376,7 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Travel() {
+function Code() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
     href: "/art/hungry-creature.html"
   }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
@@ -43369,7 +43384,7 @@ function Travel() {
   }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
 }
 
-var _default = Travel;
+var _default = Code;
 exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"src/images/dev-2019.jpg":[function(require,module,exports) {
 module.exports = "/dev-2019.dfed6d0a.jpg";
@@ -43383,10 +43398,14 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _NavBar = _interopRequireDefault(require("../components/NavBar"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function About() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Hi, this is Dev!", /*#__PURE__*/_react.default.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_NavBar.default, {
+    top: "true"
+  }), /*#__PURE__*/_react.default.createElement("p", null, "Hi, this is Dev!", /*#__PURE__*/_react.default.createElement("img", {
     alt: "Me at Duke Chapel arches",
     src: require("../images/dev-2019.jpg"),
     width: "50%"
@@ -43395,7 +43414,7 @@ function About() {
 
 var _default = About;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../images/dev-2019.jpg":"src/images/dev-2019.jpg"}],"src/styles/home.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components/NavBar":"src/components/NavBar.js","../images/dev-2019.jpg":"src/images/dev-2019.jpg"}],"src/styles/home.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -83542,7 +83561,8 @@ var Home = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("p", {
         className: "hometext left"
       }, "DeV SeT\u2022H")), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
-        top: false
+        top: false,
+        theme: "dark"
       })), /*#__PURE__*/_react.default.createElement(_graphics.default, null), /*#__PURE__*/_react.default.createElement("div", {
         className: "canvaswrapper"
       }, " "));
@@ -83572,11 +83592,11 @@ var _AnimatedRoute = _interopRequireDefault(require("./components/AnimatedRoute"
 
 var _Art = _interopRequireDefault(require("./pages/Art"));
 
-var _Essays = _interopRequireDefault(require("./pages/Essays"));
+var _Writings = _interopRequireDefault(require("./pages/Writings"));
 
 var _Research = _interopRequireDefault(require("./pages/Research"));
 
-var _Travel = _interopRequireDefault(require("./pages/Travel"));
+var _Code = _interopRequireDefault(require("./pages/Code"));
 
 var _About = _interopRequireDefault(require("./pages/About"));
 
@@ -83602,8 +83622,8 @@ function App() {
   }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
     key: "c",
     exact: true,
-    path: "/essays",
-    component: _Essays.default
+    path: "/writings",
+    component: _Writings.default
   }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
     key: "d",
     exact: true,
@@ -83612,19 +83632,23 @@ function App() {
   }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
     key: "e",
     exact: true,
-    path: "/travel",
-    component: _Travel.default
+    path: "/code",
+    component: _Code.default
   }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
     key: "f",
     exact: true,
     path: "/about",
     component: _About.default
+  }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
+    key: "g",
+    path: "/",
+    component: _Home.default
   })));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","framer-motion":"node_modules/framer-motion/dist/framer-motion.es.js","./components/AnimatedRoute":"src/components/AnimatedRoute.js","./pages/Art":"src/pages/Art.js","./pages/Essays":"src/pages/Essays.js","./pages/Research":"src/pages/Research.js","./pages/Travel":"src/pages/Travel.js","./pages/About":"src/pages/About.js","./pages/Home":"src/pages/Home.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","framer-motion":"node_modules/framer-motion/dist/framer-motion.es.js","./components/AnimatedRoute":"src/components/AnimatedRoute.js","./pages/Art":"src/pages/Art.js","./pages/Writings":"src/pages/Writings.js","./pages/Research":"src/pages/Research.js","./pages/Code":"src/pages/Code.js","./pages/About":"src/pages/About.js","./pages/Home":"src/pages/Home.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -83637,7 +83661,7 @@ var _App = _interopRequireDefault(require("./App"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log("hiiii");
+console.log("stay away from my console!");
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_reactRouterDom.HashRouter, null, /*#__PURE__*/_react.default.createElement(_App.default, null)), document.getElementById("root"));
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./App":"src/App.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -83668,7 +83692,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50154" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61138" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

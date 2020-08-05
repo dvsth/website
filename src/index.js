@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { HashRouter, Route, NavLink } from "react-router-dom"
+import { HashRouter } from "react-router-dom"
 
 import App from "./App"
 
-console.log("hiiii")
+console.log("stay away from my console!")
 ReactDOM.render(
   <HashRouter>
     <App />
