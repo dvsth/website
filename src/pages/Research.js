@@ -1,6 +1,7 @@
 import React from "react";
 
 function Research() {
+    document.body.style = 'background: whitesmoke;';
     return (
         <div>
             <p>

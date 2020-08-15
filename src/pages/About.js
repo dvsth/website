@@ -1,16 +1,20 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+import Card from "../components/Card"
+
+import "../styles/page"
 
 function About() {
+    document.body.style = 'background: whitesmoke;';
     return (
-        <div>
-            <p>
-                Hi, this is Dev!
-                <img 
-                    alt="Me at Duke Chapel arches" 
-                    src={require("../images/dev-2019.jpg")}
-                    width='50%' />
-            </p>
+        <div className="page">
+                <p>
+                    Hi, this is Dev!
+                    <img
+                        alt="Me at Duke Chapel arches"
+                        src={require("../images/dev-2019.jpg")}
+                        width='400px'
+                    />
+                </p>
         </div>
     )
 }

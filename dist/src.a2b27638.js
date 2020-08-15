@@ -42843,20 +42843,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function AnimatedRoute(props) {
   return /*#__PURE__*/_react.default.createElement(_framerMotion.motion.div, {
     key: props.key // vertical slide fade in:
-    // initial={{ y: '3%', opacity: 0 }}
-    // animate={{ y: '0%', opacity: 1 }}
-    // exit={{ y: '-100%', opacity: 0 }}
-    // fade in
     ,
     initial: {
-      opacity: 0.5
+      y: '3%',
+      opacity: 0
     },
     animate: {
+      y: '0%',
       opacity: 1
     },
     exit: {
-      opacity: 0.5
-    },
+      y: '-100%',
+      opacity: 0
+    } // fade in
+    // initial={{ opacity: 0.5 }}
+    // animate={{ opacity: 1 }}
+    // exit={{ opacity: 0.5 }}
+    ,
     transition: {
       duration: 1.5
     }
@@ -42956,15 +42959,164 @@ require("../styles/card.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Card(props) {
+function Card() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "card"
-  }, /*#__PURE__*/_react.default.createElement("p", null, props.text));
+  });
 }
 
 var _default = Card;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../styles/card.css":"src/styles/card.css"}],"src/styles/navbar.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../styles/card.css":"src/styles/card.css"}],"src/styles/page.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/Art.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Card = _interopRequireDefault(require("../components/Card"));
+
+require("../styles/page.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Art() {
+  document.body.style = 'background: whitesmoke;';
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "page"
+  }, /*#__PURE__*/_react.default.createElement(_Card.default, {
+    text: "Hi this is Dev"
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/art/hungry-creature.html"
+  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
+    href: "/art/spatial-poetry.html"
+  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
+}
+
+var _default = Art;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../components/Card":"src/components/Card.js","../styles/page.css":"src/styles/page.css"}],"src/pages/Writings.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Writings() {
+  document.body.style = 'background: whitesmoke;';
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/art/hungry-creature.html"
+  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
+    href: "/art/spatial-poetry.html"
+  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
+}
+
+var _default = Writings;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/pages/Research.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Research() {
+  document.body.style = 'background: whitesmoke;';
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/art/hungry-creature.html"
+  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
+    href: "/art/spatial-poetry.html"
+  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
+}
+
+var _default = Research;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/pages/Code.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Card = _interopRequireDefault(require("../components/Card"));
+
+require("../styles/page.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Code() {
+  document.body.style = 'background: whitesmoke;';
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "page"
+  }, /*#__PURE__*/_react.default.createElement(_Card.default, {
+    text: "Hi this is Dev"
+  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/art/hungry-creature.html"
+  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
+    href: "/art/spatial-poetry.html"
+  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
+}
+
+var _default = Code;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../components/Card":"src/components/Card.js","../styles/page.css":"src/styles/page.css"}],"src/images/dev-2019.jpg":[function(require,module,exports) {
+module.exports = "/dev-2019.dfed6d0a.jpg";
+},{}],"src/pages/About.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Card = _interopRequireDefault(require("../components/Card"));
+
+require("../styles/page");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function About() {
+  document.body.style = 'background: whitesmoke;';
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "page"
+  }, /*#__PURE__*/_react.default.createElement("p", null, "Hi, this is Dev!", /*#__PURE__*/_react.default.createElement("img", {
+    alt: "Me at Duke Chapel arches",
+    src: require("../images/dev-2019.jpg"),
+    width: "400px"
+  })));
+}
+
+var _default = About;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../components/Card":"src/components/Card.js","../styles/page":"src/styles/page.css","../images/dev-2019.jpg":"src/images/dev-2019.jpg"}],"src/styles/home.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/styles/navbar.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -43281,141 +43433,7 @@ function NavBar(props) {
 
 var _default = NavBar;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../styles/navbar.css":"src/styles/navbar.css","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"src/styles/page.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/Art.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Card = _interopRequireDefault(require("../components/Card"));
-
-var _NavBar = _interopRequireDefault(require("../components/NavBar"));
-
-require("../styles/page.css");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Art() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "page"
-  }, /*#__PURE__*/_react.default.createElement(_Card.default, {
-    text: "Hi this is Dev"
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/hungry-creature.html"
-  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/spatial-poetry.html"
-  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
-}
-
-var _default = Art;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","../components/Card":"src/components/Card.js","../components/NavBar":"src/components/NavBar.js","../styles/page.css":"src/styles/page.css"}],"src/pages/Writings.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Writings() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/hungry-creature.html"
-  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/spatial-poetry.html"
-  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
-}
-
-var _default = Writings;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/pages/Research.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Research() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/hungry-creature.html"
-  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/spatial-poetry.html"
-  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
-}
-
-var _default = Research;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/pages/Code.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Code() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/hungry-creature.html"
-  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/spatial-poetry.html"
-  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
-}
-
-var _default = Code;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/images/dev-2019.jpg":[function(require,module,exports) {
-module.exports = "/dev-2019.dfed6d0a.jpg";
-},{}],"src/pages/About.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _NavBar = _interopRequireDefault(require("../components/NavBar"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function About() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Hi, this is Dev!", /*#__PURE__*/_react.default.createElement("img", {
-    alt: "Me at Duke Chapel arches",
-    src: require("../images/dev-2019.jpg"),
-    width: "50%"
-  })));
-}
-
-var _default = About;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","../components/NavBar":"src/components/NavBar.js","../images/dev-2019.jpg":"src/images/dev-2019.jpg"}],"src/styles/home.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../styles/navbar.css":"src/styles/navbar.css","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -83491,7 +83509,7 @@ exports.default = ThreeGraphics;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = Home;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -83509,67 +83527,26 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-var Home = /*#__PURE__*/function (_Component) {
-  _inherits(Home, _Component);
-
-  var _super = _createSuper(Home);
-
-  function Home() {
-    _classCallCheck(this, Home);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(Home, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", {
-        id: "home"
-      }, /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
-        id: "homemenu",
-        style: {
-          top: '70rvh'
-        }
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "name"
-      }, /*#__PURE__*/_react.default.createElement("p", {
-        className: "hometext left"
-      }, "DeV SeT\u2022H")), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
-        top: false,
-        theme: "dark"
-      })), /*#__PURE__*/_react.default.createElement(_graphics.default, null), /*#__PURE__*/_react.default.createElement("div", {
-        className: "canvaswrapper"
-      }, " "));
+function Home() {
+  document.body.style = 'background: black;';
+  return /*#__PURE__*/_react.default.createElement("div", {
+    id: "home"
+  }, /*#__PURE__*/_react.default.createElement(_reactDiv100vh.default, {
+    id: "homemenu",
+    style: {
+      top: '70rvh'
     }
-  }]);
-
-  return Home;
-}(_react.Component);
-
-var _default = Home;
-exports.default = _default;
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "name"
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "hometext left"
+  }, "DeV SeT\u2022H")), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
+    top: false,
+    theme: "dark"
+  })), /*#__PURE__*/_react.default.createElement(_graphics.default, null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "canvaswrapper"
+  }, " "));
+}
 },{"react":"node_modules/react/index.js","../styles/home.css":"src/styles/home.css","../components/NavBar":"src/components/NavBar.js","../graphics/graphics":"src/graphics/graphics.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
@@ -83603,34 +83580,54 @@ var _NavBar = _interopRequireDefault(require("./components/NavBar"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_framerMotion.AnimatePresence, {
-    exitBeforeEnter: true
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, {
+  return /*#__PURE__*/_react.default.createElement(_framerMotion.AnimatePresence, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, {
     key: "mySwitch"
   }, /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
     key: "a",
     exact: true,
     path: "/",
     component: _Home.default
-  }), /*#__PURE__*/_react.default.createElement(_NavBar.default, {
+  }), /*#__PURE__*/_react.default.createElement(_framerMotion.motion.div, {
+    key: "x",
+    initial: {
+      opacity: 0.5
+    },
+    animate: {
+      opacity: 1
+    },
+    exit: {
+      opacity: 0.5
+    },
+    transition: {
+      duration: 0.5
+    }
+  }, /*#__PURE__*/_react.default.createElement(_NavBar.default, {
+    key: "b",
     top: "true"
-  })), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
+  }))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, {
+    key: "mySwitch2"
+  }, /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
+    key: "c",
     exact: true,
     path: "/art",
     component: _Art.default
   }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
+    key: "d",
     exact: true,
     path: "/writings",
     component: _Writings.default
   }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
+    key: "e",
     exact: true,
     path: "/research",
     component: _Research.default
   }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
+    key: "f",
     exact: true,
     path: "/code",
     component: _Code.default
   }), /*#__PURE__*/_react.default.createElement(_AnimatedRoute.default, {
+    key: "g",
     exact: true,
     path: "/about",
     component: _About.default
@@ -83683,7 +83680,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61138" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50401" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

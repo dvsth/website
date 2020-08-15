@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "../components/Card";
-import NavBar from "../components/NavBar";
 
 import "../styles/page.css"
 
 function Art() {
+    document.body.style = 'background: whitesmoke;';
     return (
         <div className="page">
             <Card text="Hi this is Dev" />

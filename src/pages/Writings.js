@@ -1,6 +1,7 @@
 import React from "react";
 
 function Writings() {
+    document.body.style = 'background: whitesmoke;';
     return (
         <div>
             <p>
