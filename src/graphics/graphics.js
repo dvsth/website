@@ -26,6 +26,7 @@ export default class ThreeGraphics extends React.Component {
   constructor() {
     super();
     this.clock = new THREE.Clock();
+    this.lastRippleReset = 0;
   }
 
   componentDidMount() {
@@ -258,7 +259,7 @@ export default class ThreeGraphics extends React.Component {
       }
     }
 
-    function addRippleDesktop(event) {
+    this.addAutoRipple = function addRippleDesktop(event) {
       ripples.push({
         age: 0,
         position: new THREE.Vector2(event.clientX, event.clientY),
@@ -283,7 +284,7 @@ export default class ThreeGraphics extends React.Component {
       })
     }
 
-    window.addEventListener('click', addRippleDesktop)
+    window.addEventListener('click', this.addAutoRipple)
     window.addEventListener('touchend', addRippleMobile)
 
     // Particles
@@ -451,8 +452,8 @@ export default class ThreeGraphics extends React.Component {
     // Mouse Move
 
     this.mousemove = (e) => {
-      this.lightCone.position.x =  10 * ((e.clientX / window.innerWidth * 1) * 2 - 1)
-      this.backLight.position.x = this.lightCone.position.x 
+      this.lightCone.position.x = 10 * ((e.clientX / window.innerWidth * 1) * 2 - 1)
+      this.backLight.position.x = this.lightCone.position.x
       mousePositionNormalized.set(
         e.clientX / window.innerWidth * 1,
         e.clientY / window.innerHeight * 1
@@ -535,6 +536,15 @@ export default class ThreeGraphics extends React.Component {
 
     const delta = this.clock.getDelta()
 
+    const elapsed = this.clock.elapsedTime
+    if (elapsed - this.lastRippleReset > (Math.random()*12 + 1.75)) {
+      this.addAutoRipple({
+        clientX: (Math.random() / 1.25 + 0.1) * window.innerWidth,
+        clientY: (Math.random() / 1.25 + 0.1) * window.innerHeight
+      })
+      this.lastRippleReset = elapsed
+    }
+
     // if (this.modelContainer.rotation.y < -2.09) {
     //   this.rotationClockwise = true;
     //   console.log("first")
@@ -553,8 +563,8 @@ export default class ThreeGraphics extends React.Component {
     // }
 
     this.modelContainer.rotation.y = -2.09 + mousePositionNormalized.x
-    this.modelContainer.rotation.z =  - mousePositionNormalized.y / 6 + 0.2
-    
+    this.modelContainer.rotation.z = - mousePositionNormalized.y / 6 + 0.2
+
     // // update rings
     // this.circle1.rotation.x += delta * 0.2;
     // this.circle2.rotation.x += delta * 0.2;

@@ -32740,7 +32740,7 @@ if ("development" !== 'production') {
     }
   };
 }
-},{}],"../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
+},{}],"node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -33128,7 +33128,7 @@ var getFrameData = function () {
 exports.getFrameData = getFrameData;
 var _default = sync;
 exports.default = _default;
-},{"hey-listen":"node_modules/hey-listen/dist/hey-listen.es.js","process":"../../.config/yarn/global/node_modules/process/browser.js"}],"node_modules/style-value-types/dist/style-value-types.es.js":[function(require,module,exports) {
+},{"hey-listen":"node_modules/hey-listen/dist/hey-listen.es.js","process":"node_modules/process/browser.js"}],"node_modules/style-value-types/dist/style-value-types.es.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36718,7 +36718,7 @@ var styler = function () {
 };
 
 exports.styler = styler;
-},{"tslib":"node_modules/tslib/tslib.es6.js","@popmotion/popcorn":"node_modules/@popmotion/popcorn/dist/popcorn.es.js","framesync":"node_modules/framesync/dist/framesync.es.js","style-value-types":"node_modules/style-value-types/dist/style-value-types.es.js","@popmotion/easing":"node_modules/@popmotion/easing/dist/easing.es.js","hey-listen":"node_modules/hey-listen/dist/hey-listen.es.js","process":"../../.config/yarn/global/node_modules/process/browser.js"}],"node_modules/@emotion/memoize/dist/memoize.browser.esm.js":[function(require,module,exports) {
+},{"tslib":"node_modules/tslib/tslib.es6.js","@popmotion/popcorn":"node_modules/@popmotion/popcorn/dist/popcorn.es.js","framesync":"node_modules/framesync/dist/framesync.es.js","style-value-types":"node_modules/style-value-types/dist/style-value-types.es.js","@popmotion/easing":"node_modules/@popmotion/easing/dist/easing.es.js","hey-listen":"node_modules/hey-listen/dist/hey-listen.es.js","process":"node_modules/process/browser.js"}],"node_modules/@emotion/memoize/dist/memoize.browser.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42870,7 +42870,7 @@ function AnimatedRoute(props) {
 
 var _default = AnimatedRoute;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","framer-motion":"node_modules/framer-motion/dist/framer-motion.es.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","framer-motion":"node_modules/framer-motion/dist/framer-motion.es.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -42902,7 +42902,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -42937,12 +42937,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles/card.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles/card.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Card.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Card.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42969,7 +42969,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/react-div-100vh/lib/polyfill.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/react-div-100vh/lib/polyfill.js":[function(require,module,exports) {
 "use strict";
 
 if (!Array.isArray) {
@@ -43286,7 +43286,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/Art.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/Art.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43411,7 +43411,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -83023,7 +83023,18 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this);
 
     _defineProperty(_assertThisInitialized(_this), "renderScene", function () {
-      var delta = _this.clock.getDelta(); // if (this.modelContainer.rotation.y < -2.09) {
+      var delta = _this.clock.getDelta();
+
+      var elapsed = _this.clock.elapsedTime;
+
+      if (elapsed - _this.lastRippleReset > Math.random() * 12 + 1.75) {
+        _this.addAutoRipple({
+          clientX: (Math.random() / 1.25 + 0.1) * window.innerWidth,
+          clientY: (Math.random() / 1.25 + 0.1) * window.innerHeight
+        });
+
+        _this.lastRippleReset = elapsed;
+      } // if (this.modelContainer.rotation.y < -2.09) {
       //   this.rotationClockwise = true;
       //   console.log("first")
       // }
@@ -83098,6 +83109,7 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
     });
 
     _this.clock = new THREE.Clock();
+    _this.lastRippleReset = 0;
     return _this;
   }
 
@@ -83263,13 +83275,13 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
         }
       };
 
-      function addRippleDesktop(event) {
+      this.addAutoRipple = function addRippleDesktop(event) {
         ripples.push({
           age: 0,
           position: new THREE.Vector2(event.clientX, event.clientY),
           color: new THREE.Vector2(event.clientX / window.innerWidth * 1 * 255, event.clientY / window.innerHeight * 1 * 255)
         });
-      }
+      };
 
       function addRippleMobile(event) {
         var x = event.changedTouches[0].clientX;
@@ -83281,7 +83293,7 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
         });
       }
 
-      window.addEventListener('click', addRippleDesktop);
+      window.addEventListener('click', this.addAutoRipple);
       window.addEventListener('touchend', addRippleMobile); // Particles
 
       var PARTICLE_COUNT = 90;
@@ -83574,7 +83586,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/App.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -83661,7 +83673,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 console.log("stay away from my console!");
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_reactRouterDom.HashRouter, null, /*#__PURE__*/_react.default.createElement(_App.default, null)), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./App":"src/App.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./App":"src/App.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -83689,7 +83701,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50992" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51481" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -83865,5 +83877,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map
