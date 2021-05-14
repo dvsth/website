@@ -19,6 +19,8 @@ import VertexLitParticle from '../shaders/VertexLitParticle'
 import VolumetricLightScattering from '../shaders/VolumetricLightScattering'
 import VolumetricLightCylinder from '../shaders/VolumetricLightCylinder'
 
+const mousePositionNormalized = new THREE.Vector2(0.2, 0.2)
+
 export default class ThreeGraphics extends React.Component {
 
   constructor() {
@@ -340,8 +342,6 @@ export default class ThreeGraphics extends React.Component {
     const particles = new THREE.Points(particleGeometry, particleMaterial)
     particlesGroup.add(particles)
 
-    const mousePositionNormalized = new THREE.Vector2(0, 0)
-
     this.animateParticles = (delta) => {
       let i = 0
       for (let p = 0; p < PARTICLE_COUNT; p++) {
@@ -451,8 +451,8 @@ export default class ThreeGraphics extends React.Component {
     // Mouse Move
 
     this.mousemove = (e) => {
-      this.lightCone.position.x = 5 * ((e.clientX / window.innerWidth * 1) * 2 - 1)
-      this.backLight.position.x = this.lightCone.position.x
+      this.lightCone.position.x =  10 * ((e.clientX / window.innerWidth * 1) * 2 - 1)
+      this.backLight.position.x = this.lightCone.position.x 
       mousePositionNormalized.set(
         e.clientX / window.innerWidth * 1,
         e.clientY / window.innerHeight * 1
@@ -535,23 +535,26 @@ export default class ThreeGraphics extends React.Component {
 
     const delta = this.clock.getDelta()
 
-    if (this.modelContainer.rotation.y < -2.09) {
-      this.rotationClockwise = true;
-      console.log("first")
-    }
-    else if (this.modelContainer.rotation.y > -1.05) {
-      this.rotationClockwise = false;
-      console.log("second")
-      console.log(this.modelContainer.rotation.y)
-    }
+    // if (this.modelContainer.rotation.y < -2.09) {
+    //   this.rotationClockwise = true;
+    //   console.log("first")
+    // }
+    // else if (this.modelContainer.rotation.y > -1.05) {
+    //   this.rotationClockwise = false;
+    //   console.log("second")
+    //   console.log(this.modelContainer.rotation.y)
+    // }
 
-    if (this.rotationClockwise) {
-      this.modelContainer.rotation.y += delta * 0.2;
-    }
-    else {
-      this.modelContainer.rotation.y -= delta * 0.2;
-    }
+    // if (this.rotationClockwise) {
+    //   this.modelContainer.rotation.y += delta * 0.2;
+    // }
+    // else {
+    //   this.modelContainer.rotation.y -= delta * 0.2;
+    // }
 
+    this.modelContainer.rotation.y = -2.09 + mousePositionNormalized.x
+    this.modelContainer.rotation.z =  - mousePositionNormalized.y / 6 + 0.2
+    
     // // update rings
     // this.circle1.rotation.x += delta * 0.2;
     // this.circle2.rotation.x += delta * 0.2;

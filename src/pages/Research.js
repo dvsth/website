@@ -3,9 +3,8 @@ import React from "react";
 function Research() {
     return (
         <div>
-            <p>
-                <a href="/art/hungry-creature.html"> Pay a visit to the Hungry Creature </a> <br />
-                <a href="/art/spatial-poetry.html"> Compose spatial poetry </a> <br />
+            <p className="page-text">
+               Work in progress
         </p>
         </div>
     )

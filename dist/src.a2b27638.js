@@ -32740,7 +32740,7 @@ if ("development" !== 'production') {
     }
   };
 }
-},{}],"node_modules/process/browser.js":[function(require,module,exports) {
+},{}],"../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -33128,7 +33128,7 @@ var getFrameData = function () {
 exports.getFrameData = getFrameData;
 var _default = sync;
 exports.default = _default;
-},{"hey-listen":"node_modules/hey-listen/dist/hey-listen.es.js","process":"node_modules/process/browser.js"}],"node_modules/style-value-types/dist/style-value-types.es.js":[function(require,module,exports) {
+},{"hey-listen":"node_modules/hey-listen/dist/hey-listen.es.js","process":"../../.config/yarn/global/node_modules/process/browser.js"}],"node_modules/style-value-types/dist/style-value-types.es.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36718,7 +36718,7 @@ var styler = function () {
 };
 
 exports.styler = styler;
-},{"tslib":"node_modules/tslib/tslib.es6.js","@popmotion/popcorn":"node_modules/@popmotion/popcorn/dist/popcorn.es.js","framesync":"node_modules/framesync/dist/framesync.es.js","style-value-types":"node_modules/style-value-types/dist/style-value-types.es.js","@popmotion/easing":"node_modules/@popmotion/easing/dist/easing.es.js","hey-listen":"node_modules/hey-listen/dist/hey-listen.es.js","process":"node_modules/process/browser.js"}],"node_modules/@emotion/memoize/dist/memoize.browser.esm.js":[function(require,module,exports) {
+},{"tslib":"node_modules/tslib/tslib.es6.js","@popmotion/popcorn":"node_modules/@popmotion/popcorn/dist/popcorn.es.js","framesync":"node_modules/framesync/dist/framesync.es.js","style-value-types":"node_modules/style-value-types/dist/style-value-types.es.js","@popmotion/easing":"node_modules/@popmotion/easing/dist/easing.es.js","hey-listen":"node_modules/hey-listen/dist/hey-listen.es.js","process":"../../.config/yarn/global/node_modules/process/browser.js"}],"node_modules/@emotion/memoize/dist/memoize.browser.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42870,7 +42870,7 @@ function AnimatedRoute(props) {
 
 var _default = AnimatedRoute;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","framer-motion":"node_modules/framer-motion/dist/framer-motion.es.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","framer-motion":"node_modules/framer-motion/dist/framer-motion.es.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -42902,7 +42902,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -42937,12 +42937,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles/card.css":[function(require,module,exports) {
+},{"./bundle-url":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles/card.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Card.js":[function(require,module,exports) {
+},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Card.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42969,7 +42969,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/react-div-100vh/lib/polyfill.js":[function(require,module,exports) {
+},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/react-div-100vh/lib/polyfill.js":[function(require,module,exports) {
 "use strict";
 
 if (!Array.isArray) {
@@ -43286,7 +43286,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/Art.js":[function(require,module,exports) {
+},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/Art.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43307,9 +43307,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Art() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "page"
-  }, /*#__PURE__*/_react.default.createElement(_Card.default, {
-    text: "Hi this is Dev"
-  }), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "page-text"
+  }, /*#__PURE__*/_react.default.createElement("a", {
     href: "/art/hungry-creature.html"
   }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
     href: "/art/spatial-poetry.html"
@@ -43331,11 +43331,9 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Writings() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/hungry-creature.html"
-  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/spatial-poetry.html"
-  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", {
+    className: "page-text"
+  }, "Work in progress"));
 }
 
 var _default = Writings;
@@ -43353,11 +43351,9 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Research() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/hungry-creature.html"
-  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/spatial-poetry.html"
-  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", {
+    className: "page-text"
+  }, "Work in progress"));
 }
 
 var _default = Research;
@@ -43375,17 +43371,15 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Code() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/hungry-creature.html"
-  }, " Pay a visit to the Hungry Creature "), " ", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("a", {
-    href: "/art/spatial-poetry.html"
-  }, " Compose spatial poetry "), " ", /*#__PURE__*/_react.default.createElement("br", null)));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", {
+    className: "page-text"
+  }, "Work in progress"));
 }
 
 var _default = Code;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/images/dev-2019.jpg":[function(require,module,exports) {
-module.exports = "/dev-2019.dfed6d0a.jpg";
+},{"react":"node_modules/react/index.js"}],"src/images/dev.jpg":[function(require,module,exports) {
+module.exports = "/dev.4b556d5f.jpg";
 },{}],"src/pages/About.js":[function(require,module,exports) {
 "use strict";
 
@@ -43401,21 +43395,23 @@ var _NavBar = _interopRequireDefault(require("../components/NavBar"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function About() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Hi, this is Dev!", /*#__PURE__*/_react.default.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", {
+    className: "page-text"
+  }, "Hi, this is Dev!", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("img", {
     alt: "Me at Duke Chapel arches",
-    src: require("../images/dev-2019.jpg"),
-    width: "50%"
+    src: require("../images/dev.jpg"),
+    width: "300px"
   })));
 }
 
 var _default = About;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../components/NavBar":"src/components/NavBar.js","../images/dev-2019.jpg":"src/images/dev-2019.jpg"}],"src/styles/home.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components/NavBar":"src/components/NavBar.js","../images/dev.jpg":"src/images/dev.jpg"}],"src/styles/home.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
+},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -83012,6 +83008,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var mousePositionNormalized = new THREE.Vector2(0.2, 0.2);
+
 var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
   _inherits(ThreeGraphics, _React$Component);
 
@@ -83025,22 +83023,25 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this);
 
     _defineProperty(_assertThisInitialized(_this), "renderScene", function () {
-      var delta = _this.clock.getDelta();
+      var delta = _this.clock.getDelta(); // if (this.modelContainer.rotation.y < -2.09) {
+      //   this.rotationClockwise = true;
+      //   console.log("first")
+      // }
+      // else if (this.modelContainer.rotation.y > -1.05) {
+      //   this.rotationClockwise = false;
+      //   console.log("second")
+      //   console.log(this.modelContainer.rotation.y)
+      // }
+      // if (this.rotationClockwise) {
+      //   this.modelContainer.rotation.y += delta * 0.2;
+      // }
+      // else {
+      //   this.modelContainer.rotation.y -= delta * 0.2;
+      // }
 
-      if (_this.modelContainer.rotation.y < -2.09) {
-        _this.rotationClockwise = true;
-        console.log("first");
-      } else if (_this.modelContainer.rotation.y > -1.05) {
-        _this.rotationClockwise = false;
-        console.log("second");
-        console.log(_this.modelContainer.rotation.y);
-      }
 
-      if (_this.rotationClockwise) {
-        _this.modelContainer.rotation.y += delta * 0.2;
-      } else {
-        _this.modelContainer.rotation.y -= delta * 0.2;
-      } // // update rings
+      _this.modelContainer.rotation.y = -2.09 + mousePositionNormalized.x;
+      _this.modelContainer.rotation.z = -mousePositionNormalized.y / 6 + 0.2; // // update rings
       // this.circle1.rotation.x += delta * 0.2;
       // this.circle2.rotation.x += delta * 0.2;
       // this.circle2.rotation.y += delta * 0.25;
@@ -83048,7 +83049,6 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
       // this.circle3.rotation.y -= delta * 0.27;
       // this.circle4.rotation.x -= delta * 0.3;
       // this.circle4.rotation.y -= delta * 0.27;
-
 
       _this.animateParticles(delta); // update orbitcontrols
       // this.controls.update();
@@ -83327,7 +83327,6 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
       particleMaterial.uniforms.decayModifier.value = 2.5;
       var particles = new THREE.Points(particleGeometry, particleMaterial);
       particlesGroup.add(particles);
-      var mousePositionNormalized = new THREE.Vector2(0, 0);
 
       this.animateParticles = function (delta) {
         var i = 0;
@@ -83401,7 +83400,7 @@ var ThreeGraphics = /*#__PURE__*/function (_React$Component) {
       this.finalComposer.addPass(asciiPass); // Mouse Move
 
       this.mousemove = function (e) {
-        _this2.lightCone.position.x = 5 * (e.clientX / window.innerWidth * 1 * 2 - 1);
+        _this2.lightCone.position.x = 10 * (e.clientX / window.innerWidth * 1 * 2 - 1);
         _this2.backLight.position.x = _this2.lightCone.position.x;
         mousePositionNormalized.set(e.clientX / window.innerWidth * 1, e.clientY / window.innerHeight * 1);
       };
@@ -83570,7 +83569,12 @@ var Home = /*#__PURE__*/function (_Component) {
 
 var _default = Home;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../styles/home.css":"src/styles/home.css","../components/NavBar":"src/components/NavBar.js","../graphics/graphics":"src/graphics/graphics.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../styles/home.css":"src/styles/home.css","../components/NavBar":"src/components/NavBar.js","../graphics/graphics":"src/graphics/graphics.js","react-div-100vh":"node_modules/react-div-100vh/lib/index.js"}],"src/styles/styles.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -83599,6 +83603,8 @@ var _About = _interopRequireDefault(require("./pages/About"));
 var _Home = _interopRequireDefault(require("./pages/Home"));
 
 var _NavBar = _interopRequireDefault(require("./components/NavBar"));
+
+require("./styles/styles.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -83639,7 +83645,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","framer-motion":"node_modules/framer-motion/dist/framer-motion.es.js","./components/AnimatedRoute":"src/components/AnimatedRoute.js","./pages/Art":"src/pages/Art.js","./pages/Writings":"src/pages/Writings.js","./pages/Research":"src/pages/Research.js","./pages/Code":"src/pages/Code.js","./pages/About":"src/pages/About.js","./pages/Home":"src/pages/Home.js","./components/NavBar":"src/components/NavBar.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","framer-motion":"node_modules/framer-motion/dist/framer-motion.es.js","./components/AnimatedRoute":"src/components/AnimatedRoute.js","./pages/Art":"src/pages/Art.js","./pages/Writings":"src/pages/Writings.js","./pages/Research":"src/pages/Research.js","./pages/Code":"src/pages/Code.js","./pages/About":"src/pages/About.js","./pages/Home":"src/pages/Home.js","./components/NavBar":"src/components/NavBar.js","./styles/styles.css":"src/styles/styles.css"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -83655,7 +83661,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 console.log("stay away from my console!");
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_reactRouterDom.HashRouter, null, /*#__PURE__*/_react.default.createElement(_App.default, null)), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./App":"src/App.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./App":"src/App.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -83683,7 +83689,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61138" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50992" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -83859,5 +83865,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
+},{}]},{},["../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map

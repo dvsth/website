@@ -155,5 +155,13 @@ canvas {
 *, ::after, ::before {
   box-sizing: border-box;
 }
+html, body {
+    height: 100vh;
+}
+
+.page-text {
+    color: whitesmoke;
+    opacity: 0.5;
+}
 
 /*# sourceMappingURL=/src.a2b27638.css.map */

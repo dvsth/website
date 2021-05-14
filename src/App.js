@@ -13,6 +13,8 @@ import Home from "./pages/Home";
 
 import NavBar from "./components/NavBar"
 
+import "./styles/styles.css"
+
 function App() {
   return (
     <AnimatePresence exitBeforeEnter>
