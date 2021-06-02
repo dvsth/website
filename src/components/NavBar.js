@@ -25,7 +25,7 @@ function NavBar(props) {
                     <NavLink exact to="/art">art</NavLink>
                     <NavLink exact to="/code">code</NavLink>
                     <NavLink exact to="/research">research</NavLink>
-                    <NavLink exact to="/writings">writings</NavLink>
+                    <NavLink exact to="/blog">blog</NavLink>
                     <NavLink exact to="/about">about</NavLink>
                 </div>
             </Div100vh>
@@ -39,7 +39,7 @@ function NavBar(props) {
                 <NavLink exact to="/art">art</NavLink>
                 <NavLink exact to="/code">code</NavLink>
                 <NavLink exact to="/research">research</NavLink>
-                <NavLink exact to="/writings">writings</NavLink>
+                <NavLink exact to="/blog">blog</NavLink>
                 <NavLink exact to="/about">about</NavLink>
             </div>
             // </Div100vh>
